@@ -1,9 +1,9 @@
 {
-  "name": "API monitoring system",
+  "name": "api-hit-monitoring",
   "version": "1.0.0",
-  "description": "Monitors the working of APIs",
-  "main": "src/sever.js",
-  
+  "description": "Real-Time API Hit Tracking & Monitoring System",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
@@ -19,7 +19,6 @@
   ],
   "author": "",
   "license": "MIT",
-  "type": "module",
   "dependencies": {
     "amqplib": "^0.10.3",
     "bcryptjs": "^2.4.3",

@@ -20,7 +20,7 @@ const apiKeySchema = new mongoose.Schema(
             index: true,
         },
         clientId: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId, // 123
             ref: 'Client',
             required: true,
             index: true,
@@ -129,6 +129,11 @@ apiKeySchema.index({ clientId: 1, isActive: 1 });
 apiKeySchema.index({ keyValue: 1, isActive: 1 });
 apiKeySchema.index({ environment: 1, clientId: 1 });
 apiKeySchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 })
+
+apiKeySchema.methods.isExpired = function () {
+    if (!this.expiresAt) return false;
+    return new Date(this.expiresAt) < new Date();
+};
 
 const ApiKey = mongoose.model('ApiKey', apiKeySchema);
 

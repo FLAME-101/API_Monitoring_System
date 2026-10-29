@@ -1,4 +1,4 @@
-// index.js has global level cofig
+// yaha pr basically ham global level ka config likhege!!
 
 import dotenv from "dotenv"
 
@@ -6,11 +6,11 @@ dotenv.config()
 
 
 const config = {
-    // server
+    // Server
     node_env: process.env.NODE_ENV || 'development',
     port: parseInt(process.env.PORT || "5000", 10),
 
-    // mongoDB
+    // MOngodb
     mongo: {
         uri: process.env.MONGO_URI || 'mongodb://localhost:27017/api_monitoring',
         dbName: process.env.MONGO_DB_NAME || 'api_monitoring',
